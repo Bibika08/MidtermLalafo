@@ -14,7 +14,7 @@ interface CardFocusedProps {
     onDelete: () => void;
 }
 
-export default function CardFocused({
+export default function CardDeatiled({
                                         image,
                                         title,
                                         description,
