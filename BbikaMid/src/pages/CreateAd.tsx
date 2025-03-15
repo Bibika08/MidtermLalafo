@@ -15,7 +15,7 @@ const CreateAd = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
-    // Загружаем категории из Firebase
+    
     useEffect(() => {
         const fetchCategories = async () => {
             try {
@@ -35,7 +35,7 @@ const CreateAd = () => {
         fetchCategories();
     }, []);
 
-    // Функция отправки объявления
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 

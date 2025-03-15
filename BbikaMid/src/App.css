@@ -1,0 +1,61 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+.AppBar {
+    background-color: #1976d2; 
+}
+
+
+.MuiButton-root {
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.MuiButton-root:hover {
+    background-color: rgba(25, 118, 210, 0.08);
+}
+
+.MuiTypography-root {
+    font-size: 1.5rem;
+}
+
+.MuiToolbar-root {
+    padding: 0 20px;
+}
+
+@media (max-width: 600px) {
+    .MuiButton-root {
+        font-size: 1rem;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .container {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .header {
+    background-color: #1976d2;
+    padding: 20px;
+  }
+  

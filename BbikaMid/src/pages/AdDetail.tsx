@@ -28,7 +28,7 @@ const AdDetail = () => {
         fetchAd();
     }, [id]);
 
-    // Удаление объявления с подтверждением
+    
     const handleDelete = async () => {
         const isConfirmed = window.confirm("Вы уверены, что хотите удалить это объявление?");
         if (isConfirmed) {
