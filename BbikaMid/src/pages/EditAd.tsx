@@ -5,7 +5,7 @@ import { TextField, Button } from "@mui/material";
 
 
 const EditAd = () => {
-    const { id } = useParams();  // Получаем id из URL
+    const { id } = useParams();  
     const navigate = useNavigate();
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -14,23 +14,20 @@ const EditAd = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
-    // Проверяем, что id доступен
     useEffect(() => {
-        console.log("Полученный ID из URL:", id); // Логируем id для проверки
+        console.log("Полученный ID из URL:", id); 
 
         if (!id) {
             setError("ID объявления не найдено!");
             return;
         }
 
-        // Функция для загрузки объявления
         const fetchAd = async () => {
             try {
                 const response = await api.get(`ads/${id}.json`);
-                console.log("Ответ от API:", response);  // Логируем ответ от API
+                console.log("Ответ от API:", response);  
 
                 if (response.data) {
-                    // Если данные есть, заполняем состояние
                     setTitle(response.data.title);
                     setDescription(response.data.description);
                     setPrice(response.data.price);
@@ -45,9 +42,8 @@ const EditAd = () => {
         };
 
         fetchAd();
-    }, [id]);  // Повторно загружаем данные, если id изменится
+    }, [id]); 
 
-    // Обработчик отправки формы
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
@@ -62,7 +58,7 @@ const EditAd = () => {
         }
 
         setLoading(true);
-        setError("");  // Сбрасываем ошибку
+        setError(""); 
 
         try {
             await api.put(`ads/${id}.json`, {
@@ -73,7 +69,7 @@ const EditAd = () => {
             });
 
             alert("Объявление обновлено!");
-            navigate(`/ad/${id}`);  // Перенаправляем на страницу объявления
+            navigate(`/ad/${id}`);  
         } catch (err) {
             setError("Ошибка при обновлении объявления!");
             console.error("Ошибка при обновлении:", err);

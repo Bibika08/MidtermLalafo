@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../AxiosApi";
 import { AppBar, Box, Button, Container, Toolbar, Typography} from "@mui/material";
-
+import "./css/Header.css"
 const Header = () => {
     const [categories, setCategories] = useState<{ id: string; name: string }[]>([]);
 
